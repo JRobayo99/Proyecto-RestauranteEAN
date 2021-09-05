@@ -1,0 +1,11 @@
+Orden de los trabajos:
+ *Librerias QR o código de barras
+ * Emojis Laura
+ * Libreria interfaz del restaurante 
+ * Memoria de ocupación de espacio 
+ * 1-2-4-5 relación entre esos puntos
+ * 1-7 Mostramos el descuentos por dia
+ * voz, tactil, pc librerias
+ Esta semana 
+  * Librerias QR o código de barras
+  * Voz, tactil, pc librerias
