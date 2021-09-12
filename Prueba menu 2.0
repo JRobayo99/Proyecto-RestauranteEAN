@@ -1,0 +1,33 @@
+"""
+Entradas
+hamburguesa=$12.000
+hamburguesa con queso=$17.000
+hamburguesa doble carne=$26.000
+papas=$15.000
+banjeda paisa=$7.000
+malteadas=$8.000
+helados=$3.000
+Salidas
+"""
+
+
+
+hamburguesa=12
+hamburguesa_con_queso=17
+hamburguesa_doble_carne=26
+papas=15
+bandeja_paisa=7
+malteadas=8
+helados=3
+
+c_hamburguesa=int(input("Ingrese la cantidad de hamburguesas:"))
+c_hamburguesa_con_queso=int(input("Ingrese la cantidad de hamburguesas con queso:"))
+c_hamburguesa_doble_carne=int(input("Ingrese la cantidad de hamburguesas dobles con carne:"))
+c_papas=int(input("Ingrese la cantidad de papas:"))
+c_bandeja_paisa=int(input("Ingrese la cantidadde bandejas paisa:"))
+c_malteadas=int(input("Ingrese la cantidad de malteadas:"))
+c_helados=int(input("Ingrese la cantidad de helados:"))
+
+total=c_hamburguesa * hamburguesa + c_hamburguesa_con_queso * \
+ hamburguesa_con_queso + c_hamburguesa_doble_carne * hamburguesa_doble_carne + \ c_papas * papas + c_bandeja_paisa * bandeja_paisa +\ c_malteadas * malteadas + c_helados * helados
+print("El valor a pagar es:",total) 
