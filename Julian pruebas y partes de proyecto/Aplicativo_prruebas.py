@@ -1,7 +1,7 @@
 from tkinter import Button, Frame, Tk
 root=Tk()
 root.title=("Ejemplo Frames")
-root.geomtry=("200*70")
+root.geomtry=("200x70")
 
 frame1=Frame(root,bg="blue")
 frame1.pack(expand=True, fill= "both")
