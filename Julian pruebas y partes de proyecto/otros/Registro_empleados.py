@@ -23,7 +23,7 @@ def menu_pantalla():
     Button(text="Iniciar Sesión", height="3",width="30",command= inicio_sesion).pack()
     Label(text="").pack()
 
-    Button(text="Registrar usuario", height="3",width="30").pack()
+    Button(text="Registrar usuario", height="3",width="30",command=registrar).pack()
 
     pantalla.mainloop()
 
@@ -79,6 +79,13 @@ def registrar():
     nombreusuario_entry = Entry(pantalla2)
     nombreusuario_entry.pack()
     Label(pantalla2).pack()
+
+    Label(pantalla2, text="Contraseña").pack
+    contraseña_entry = Entry(pantalla2)
+    contraseña_entry.pack()
+    Label(pantalla2).pack()
+
+    Button(pantalla2, text="Registrar")
     
 menu_pantalla()
 
