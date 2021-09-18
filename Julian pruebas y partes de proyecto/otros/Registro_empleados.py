@@ -85,22 +85,30 @@ def registrar():
     contraseña_entry.pack()
     Label(pantalla2).pack()
 
-    Button(pantalla2, text="Registrar").pack()
+    Button(pantalla2, text="Registrar",command=inserta_datos).pack()
 
 def inserta_datos():
     datos=pymysql.connect(
         host="localhost",
-        user="root"
-        password=""
+        user="root",
+        password="",
         datos="empleados"
         )
-        fcursor=datos.cursos()
-        sql="INSERT INTO login (usurio, contraseña)Values('(0)','(1)')".format(nombreusuario_entry.get,contraseña_entry.get())
-        try:
-            fcursor.execute(sql)
-            datos.commit()
+    fcursor=datos.cursor()
+    sql="INSERT INTO login (usurio, contraseña)Values('(0)','(1)')".format(nombreusuario_entry.get,contraseña_entry.get())
+    try:
+        fcursor.execute(sql)
+        datos.commit()
+        messabox.showinfo(message="Registro Exitoso", title="Aviso")
+
+    except:
+        datos.rollback()
+        messabox.showinfo(message="Registro no Exitoso ", title="Aviso")
+
+    datos.close()
+            
         
-menu_pantalla().pack
+menu_pantalla()
 
 
 
