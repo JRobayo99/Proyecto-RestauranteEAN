@@ -73,7 +73,13 @@ def registrar():
     contraseña_entry=StringVar()
 
     Label(pantalla2, text="Por favor ingrese un nombre de usuarioy una contraseña ",bg="navy", fg="white", width="300", height="3",font=("Calibri",15)).pack()
+    Label(pantalla2, text="").pack()
 
+    Label(pantalla2, text="Usuario").pack
+    nombreusuario_entry = Entry(pantalla2)
+    nombreusuario_entry.pack()
+    Label(pantalla2).pack()
+    
 menu_pantalla()
 
 
