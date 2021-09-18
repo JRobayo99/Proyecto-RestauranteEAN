@@ -121,6 +121,13 @@ def validacion_datos():
 
     if fcursor.fetchall():
         messagebox.showinfo(title="inico de sesion correcto", message="Usuario y contraseña correcta")
+        global pantalla3
+        pantalla3= Toplevel(pantalla)
+        pantalla3.geometry("400x250")
+        pantalla3.title("menu empleados")
+        pantalla3.iconbitmap("logo1.ico")
+
+        pantalla3.mainloop
         
     else:
         messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario o contraseña incorrectos")
