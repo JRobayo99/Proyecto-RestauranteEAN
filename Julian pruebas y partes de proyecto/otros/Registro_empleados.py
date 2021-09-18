@@ -57,7 +57,7 @@ def inicio_sesion():
     contrasena_usuario_entry.pack()
     Label(pantalla1).pack()
 
-    Button(pantalla1, text="Iniciar Sesión").pack()
+    Button(pantalla1, text="Iniciar Sesión", command=validacion_datos).pack()
 
 def registrar():
     global pantalla2
@@ -107,7 +107,24 @@ def inserta_datos():
         messagebox.showinfo(message="Registro no Exitoso ", title="Aviso")
 
     bd.close()
-            
+
+def validacion_datos():
+    bd=pymysql.connect(
+        host="localhost",
+        user="root",
+        passwd="",
+        db="empleados"
+        )
+    fcursor=bd.cursor()
+    
+    fcursor.execute("SELECT Clave FROM login WHERE Usuario='"+nombreusuario_verify+"'and Clave'"+contrasenausuario_verify+"'")
+
+    if fcursor.fetchall():
+        messagebox.showinfo(title="inico de sesion correcto", message="Usuario y contraseña correcta")
+        
+    else:
+        messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario y contraseña correcta")
+    bd.close()
         
 menu_pantalla()
 
