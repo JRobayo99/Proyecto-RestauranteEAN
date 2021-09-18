@@ -87,7 +87,7 @@ def registrar():
 
     Button(pantalla2, text="Registrar")
     
-menu_pantalla()
+menu_pantalla().pack
 
 
 
