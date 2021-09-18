@@ -9,7 +9,7 @@ def menu_pantalla():
     pantalla.geometry("300x380")
     pantalla.title("Bienvenido")
     pantalla.iconbitmap("logo1.ico")
-    pantalla.configure(bg="saddle brown")
+    pantalla.configure(bg="gray")
 
 
     image=PhotoImage(file="logo1.gif")
@@ -123,7 +123,7 @@ def validacion_datos():
         messagebox.showinfo(title="inico de sesion correcto", message="Usuario y contraseña correcta")
         
     else:
-        messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario o contraseña incorrecta")
+        messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario o contraseña incorrectos")
     bd.close()
         
 menu_pantalla()
