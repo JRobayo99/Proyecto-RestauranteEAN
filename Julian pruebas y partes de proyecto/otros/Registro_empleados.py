@@ -53,7 +53,7 @@ def inicio_sesion():
     Label(pantalla1).pack()
 
     Label(pantalla1, text="Contraseña").pack()
-    contrasena_usuario_entry = Entry(pantalla1, textvariable=contrasenausuario_verify)
+    contrasena_usuario_entry = Entry(pantalla1,show="*", textvariable=contrasenausuario_verify)
     contrasena_usuario_entry.pack()
     Label(pantalla1).pack()
 
@@ -81,7 +81,7 @@ def registrar():
     Label(pantalla2).pack()
 
     Label(pantalla2, text="Contraseña").pack()
-    contrasena_entry = Entry(pantalla2)
+    contrasena_entry = Entry(pantalla2,show="*")
     contrasena_entry.pack()
     Label(pantalla2).pack()
 
