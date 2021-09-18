@@ -86,7 +86,16 @@ def registrar():
     Label(pantalla2).pack()
 
     Button(pantalla2, text="Registrar").pack()
-    
+
+def inserta_datos():
+    datos=pymysql.connect(
+        host="localhost",
+        user="root"
+        password=""
+        datos="empleados"
+        )
+        fcursor=datos.cursos()
+        sql="INSERT INTO login (usurio, contraseña)Values('(0)','(1)')".format(nombreusuario_entry)
 menu_pantalla().pack
 
 
