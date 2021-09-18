@@ -67,10 +67,10 @@ def registrar():
     pantalla2.iconbitmap("logo1.ico")
 
     global nombreusuario_entry
-    global contraseña_entry
+    global contrasena_entry
 
     nombreusuario_entry=StringVar()
-    contraseña_entry=StringVar()
+    contrasena_entry=StringVar()
 
     Label(pantalla2, text="Por favor ingrese un nombre de usuario y una contraseña \n ",bg="navy", fg="white", width="300", height="3",font=("Calibri",15)).pack()
     Label(pantalla2, text="").pack()
@@ -81,31 +81,32 @@ def registrar():
     Label(pantalla2).pack()
 
     Label(pantalla2, text="Contraseña").pack()
-    contraseña_entry = Entry(pantalla2)
-    contraseña_entry.pack()
+    contrasena_entry = Entry(pantalla2)
+    contrasena_entry.pack()
     Label(pantalla2).pack()
 
     Button(pantalla2, text="Registrar",command=inserta_datos).pack()
 
 def inserta_datos():
-    datos=pymysql.connect(
+    bd=pymysql.connect(
         host="localhost",
         user="root",
-        password="",
-        datos="empleados"
+        passwd="",
+        db="empleados"
         )
-    fcursor=datos.cursor()
-    sql="INSERT INTO login (usurio, contraseña)Values('(0)','(1)')".format(nombreusuario_entry.get,contraseña_entry.get())
+    fcursor=bd.cursor()
+    
+    sql="INSERT INTO login (Usuario, Clave)VALUES('{0}','{1}')".format(nombreusuario_entry.get(),contrasena_entry.get())
     try:
         fcursor.execute(sql)
-        datos.commit()
-        messabox.showinfo(message="Registro Exitoso", title="Aviso")
+        bd.commit()
+        messagebox.showinfo(message="Registro Exitoso", title="Aviso")
 
     except:
-        datos.rollback()
-        messabox.showinfo(message="Registro no Exitoso ", title="Aviso")
+        bd.rollback()
+        messagebox.showinfo(message="Registro no Exitoso ", title="Aviso")
 
-    datos.close()
+    bd.close()
             
         
 menu_pantalla()
