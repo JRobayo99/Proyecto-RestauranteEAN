@@ -95,7 +95,11 @@ def inserta_datos():
         datos="empleados"
         )
         fcursor=datos.cursos()
-        sql="INSERT INTO login (usurio, contraseña)Values('(0)','(1)')".format(nombreusuario_entry)
+        sql="INSERT INTO login (usurio, contraseña)Values('(0)','(1)')".format(nombreusuario_entry.get,contraseña_entry.get())
+        try:
+            fcursor.execute(sql)
+            datos.commit()
+        
 menu_pantalla().pack
 
 
