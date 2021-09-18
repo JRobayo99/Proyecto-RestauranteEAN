@@ -117,13 +117,13 @@ def validacion_datos():
         )
     fcursor=bd.cursor()
     
-    fcursor.execute("SELECT Clave FROM login WHERE Usuario='"+nombreusuario_verify+"'and Clave'"+contrasenausuario_verify+"'")
+    fcursor.execute("SELECT Clave FROM login WHERE Usuario='"+nombreusuario_verify.get()+"'and Clave='"+contrasenausuario_verify.get()+"'")
 
     if fcursor.fetchall():
         messagebox.showinfo(title="inico de sesion correcto", message="Usuario y contraseña correcta")
         
     else:
-        messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario y contraseña correcta")
+        messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario o contraseña incorrecta")
     bd.close()
         
 menu_pantalla()
