@@ -4,6 +4,7 @@ from tkinter import messagebox
 import pymysql
 import datetime
 
+
 def menu_pantalla():
     global pantalla
     pantalla =Tk()
