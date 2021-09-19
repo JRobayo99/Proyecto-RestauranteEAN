@@ -2,6 +2,7 @@ import tkinter
 from tkinter import*
 from tkinter import messagebox
 import pymysql
+import datetime
 
 def menu_pantalla():
     global pantalla
@@ -107,7 +108,7 @@ def inserta_datos():
         messagebox.showinfo(message="Registro no Exitoso ", title="Aviso")
 
     bd.close()
-
+ahora= datetime.datetime.now()
 def validacion_datos():
     bd=pymysql.connect(
         host="localhost",
@@ -121,20 +122,22 @@ def validacion_datos():
 
     if fcursor.fetchall():
         messagebox.showinfo(title="inico de sesion correcto", message="Usuario y contraseña correcta")
-            
         global pantalla3
-        pantalla3 =Tk()
-        pantalla3.geometry("400x250")
-        pantalla3.title("menu empleados")
+        pantalla3 =tkinter.Toplevel()
+        pantalla3.geometry("700x700")
+        pantalla3.title("Registro de ingreso o salida")
         pantalla3.iconbitmap("logo1.ico")
-            
-        imagen=PhotoImage(file="empleados.gif")
-        imagen2=Label(pantalla3,image=imagen)
-        imagen2.pack()
-            
+        pantalla3.configure(bg="dark violet")
 
-        pantalla3.mainloop
+        image2=PhotoImage(file="logo1.gif")
+        label=Label(pantalla3,image=image2)
+        label.pack()
         
+        Button
+        
+        """
+        messagebox.showinfo(title="Hora de entrada", message=ahora)
+        """
     else:
         messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario o contraseña incorrectos")
     bd.close()
