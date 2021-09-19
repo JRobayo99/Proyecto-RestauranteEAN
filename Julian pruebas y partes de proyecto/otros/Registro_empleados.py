@@ -124,7 +124,7 @@ def validacion_datos():
         def menu_2():
             
             global pantalla3
-            pantalla3= Toplevel(pantalla2)
+            pantalla3= Toplevel(pantalla)
             pantalla3.geometry("400x250")
             pantalla3.title("menu empleados")
             pantalla3.iconbitmap("logo1.ico")
