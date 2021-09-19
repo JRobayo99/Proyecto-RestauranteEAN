@@ -121,20 +121,19 @@ def validacion_datos():
 
     if fcursor.fetchall():
         messagebox.showinfo(title="inico de sesion correcto", message="Usuario y contraseña correcta")
-        def menu_2():
             
-            global pantalla3
-            pantalla3= Toplevel(pantalla)
-            pantalla3.geometry("400x250")
-            pantalla3.title("menu empleados")
-            pantalla3.iconbitmap("logo1.ico")
+        global pantalla3
+        pantalla3 =Tk()
+        pantalla3.geometry("400x250")
+        pantalla3.title("menu empleados")
+        pantalla3.iconbitmap("logo1.ico")
             
-            image=PhotoImage(file="empleados.gif")
-            image=image.subsample(2,2)
-            label=Label(image=image)
-            label.pack()
+        imagen=PhotoImage(file="empleados.gif")
+        imagen2=Label(pantalla3,image=imagen)
+        imagen2.pack()
+            
 
-            pantalla3.mainloop
+        pantalla3.mainloop
         
     else:
         messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario o contraseña incorrectos")
