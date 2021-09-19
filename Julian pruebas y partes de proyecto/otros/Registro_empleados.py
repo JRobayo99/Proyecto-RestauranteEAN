@@ -8,7 +8,7 @@ import datetime
 def menu_pantalla():
     global pantalla
     pantalla =Tk()
-    pantalla.geometry("300x380")
+    pantalla.geometry("350x700")
     pantalla.title("Bienvenido")
     pantalla.iconbitmap("logo1.ico")
     pantalla.configure(bg="gray")
