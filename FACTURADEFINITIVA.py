@@ -200,8 +200,6 @@ tk.Label(text="CANTIDAD ", bg= "white").place(x=220,y=100)
 tk.Label(text="PRECIO U. ", bg= "white").place(x=320,y=100)
 tk.Label(text="PRECIO T.", bg= "white").place(x=420,y=100)
 
-tk.Label(text="Jefes: Alex Pérez, Pablo Reyes y Jim Simancas ", bg= "white").place(x=10,y=460)
-
 
 tk.Entry(textvariable = producto1,bd=1,width=12,justify="left").place(x=90,y=130)
 
