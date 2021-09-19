@@ -124,20 +124,27 @@ def validacion_datos():
         messagebox.showinfo(title="inico de sesion correcto", message="Usuario y contraseña correcta")
         global pantalla3
         pantalla3 =tkinter.Toplevel()
-        pantalla3.geometry("700x700")
+        pantalla3.geometry("300x300")
         pantalla3.title("Registro de ingreso o salida")
         pantalla3.iconbitmap("logo1.ico")
-        pantalla3.configure(bg="dark violet")
+        pantalla3.configure(bg="grey")
 
-        image2=PhotoImage(file="logo1.gif")
-        label=Label(pantalla3,image=image2)
-        label.pack()
         
-        Button
+        def mensaje():
+            
+            messagebox.showinfo(title="Hora de entrada", message= ahora)
+
+        def mensaje2():
+            
+            messagebox.showinfo(title="Hora de salida", message=ahora)
+
         
-        """
-        messagebox.showinfo(title="Hora de entrada", message=ahora)
-        """
+        lbltitulo=Label(pantalla3,text="Marque la entrada o salida",bg="navy", fg="white", width="300", height="3",font=("Calibri",15)).pack()
+        boton= Button(pantalla3,text="Entrada",height="5",width="40",command=mensaje).place(x=6, y=80)
+        boton= Button(pantalla3,text="Salida",height="5",width="40",command=mensaje2).place(x=6, y=200)
+       
+        
+        
     else:
         messagebox.showinfo(title="inico de sesion incorrecto", message="Usuario o contraseña incorrectos")
     bd.close()
