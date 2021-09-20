@@ -30,6 +30,26 @@ def inserar_datos():
         messagebox.showinfo(message="Registro no  se llevo acabo", title="Aviso")
         
         bd.close()
+
+def actualizar():
+    bd= pymysql.connect(
+        host="localhost",
+        user="root",
+        passwd="",
+        db="inventario"
+        )
+    cursor = bd.cursor()
+    
+    sql = "UPDATE Lista SET cantidad_c='"+cap.get()+"',clasifc_p='"+cla.get()+"',precio_u='"+preu.get()+"' WHERE nombre_p='"+nomb.get()+"'"
+    try:
+        cursor.execute(sql)
+        bd.commit()
+        messagebox.showinfo(message="Actualizacion exitoso", title="Aviso")
+    except:
+        bd.rollback()
+        messagebox.showinfo(message="No Actualizado",title="Aviso")
+
+        bd.close 
         
 def eliminar():
     bd= pymysql.connect(
@@ -50,24 +70,7 @@ def eliminar():
 
         bd.close
 
-def actualizar():
-    bd= pymysql.connect(
-        host="localhost",
-        user="root",
-        passwd="",
-        db="inventario"
-        )
-    cursor = bd.cursor()
-    sql = "UPDATE Lista SET cantidad_c='"+cap.get()+"', clasifc_p='"cla.get()"'"
-    try:
-        cursor.execute(sql)
-        bd.commit()
-        messagebox.showinfo(message="Borrado exitoso", title="Aviso")
-    except:
-        bd.rollback()
-        messagebox.showinfo(message="No Eliminado",title="Aviso")
 
-        bd.close 
 
 def cerrar():
     vnt.destroy()
@@ -115,7 +118,7 @@ preu.pack(padx=5, pady=5, ipadx=5, fill=tk.X)
 boton0=tk.Button(vnt, text="Registar inventario", fg="black",command= inserar_datos)
 boton0.place(x=50,y=550)
 
-boton1=tk.Button(vnt, text="Actualizar inventario", fg="black")
+boton1=tk.Button(vnt, text="Actualizar inventario", fg="black", command= actualizar)
 boton1.place(x=200,y=550)
 
 boton2=tk.Button(vnt, text="Eliminar del  inventario", fg="black",command= eliminar)
