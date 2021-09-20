@@ -48,6 +48,25 @@ def eliminar():
         bd.rollback()
         messagebox.showinfo(message="No Eliminado",title="Aviso")
 
+        bd.close
+
+def actualizar():
+    bd= pymysql.connect(
+        host="localhost",
+        user="root",
+        passwd="",
+        db="inventario"
+        )
+    cursor = bd.cursor()
+    sql = "UPDATE Lista SET cantidad_c='"+cap.get()+"', clasifc_p='"cla.get()"'"
+    try:
+        cursor.execute(sql)
+        bd.commit()
+        messagebox.showinfo(message="Borrado exitoso", title="Aviso")
+    except:
+        bd.rollback()
+        messagebox.showinfo(message="No Eliminado",title="Aviso")
+
         bd.close 
 
 def cerrar():
